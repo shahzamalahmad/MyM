@@ -16,16 +16,30 @@
 			    </ul>
 			</div>
 		</div>
+<!-- All mosque		 -->
 		<div class="col-3" style="text-align: center; background-color: ;">
 			<div class="bg-success p-2 text-white bg-opacity-75">
 				<h1><%= "All Mosque" %></h1>
 			</div>
+			<div class="container-fluid">
+				<% @articles.each do |article| %>
+   				   <div class="row">
+	   				    <h5><%= link_to article.mosque_name, article, class:"nav-link" %></h5>
+   				   </div>
+   				   <div class="row">
+    					<%= link_to article.address, article, class:"nav-link" %>
+   				   </div>
+				<% end %>				
+			</div>
 		</div>
+<!-- Mosque data -->
 		<div class="col" style="text-align: center; background-color: ;">
 			<div class="bg-success p-2 text-white bg-opacity-75">
 				<h1><%= "Mosque Data" %></h1>
 			</div>
 		</div>
+
+ <!-- other details -->
 		<div class="col" style="text-align: center; background-color: ;">
 			<div class="bg-success p-2 text-white bg-opacity-75">
 				<h1><%= "Other Details" %></h1>

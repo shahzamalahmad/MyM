@@ -1,2 +1,53 @@
-<h1>Article#show</h1>
-<p>Find me in app/views/article/show.html.erb</p>
+<div class="bg-success p-2 text-white bg-opacity-75">
+	<h1 style="text-align: center;">
+		<%= link_to @article.mosque_name, @article, class:"nav-link" %>
+	</h1>
+		<br>
+	<h3 style="text-align: center;">
+		<%= link_to @article.address, @article, class:"nav-link" %>
+	</h3>
+</div>
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<h5 style="text-align: right;">
+				Mutawalli name :- 
+			</h5>
+			
+		</div>
+		<div class="col">
+			<h5 style="text-align: left;">
+				<%= @article.mutawalli_name %>
+			</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<h5 style="text-align: right;">
+				Mobile number :-
+			</h5>
+		</div>
+		<div class="col">
+			<h5 style="text-align: left;">
+				<%= @article.mobile_no %>
+			</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<h5 style="text-align: right;">
+				Imam name :-
+			</h5>
+		</div>
+		<div class="col">
+			<h5 style="text-align: left;">
+				<%= @article.imam_name %>
+			</h5>
+		</div>
+	</div>
+</div>
+
+
+ <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Destroy", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>

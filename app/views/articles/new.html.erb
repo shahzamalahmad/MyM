@@ -1,2 +1,22 @@
-<h1>Article#new</h1>
-<p>Find me in app/views/article/new.html.erb</p>
+<h3 style="text-align: center;">Add a mpsque</h3>
+
+<%= form_with model: @article do |form| %>
+  <div>
+    <%= form.text_field :mosque_name, placeholder:"Mosque name" %>
+  </div>
+
+  <div>
+    <%= form.text_area :address , placeholder:"Address of mosque" %>
+  </div>
+  <div>
+    <%= form.text_area :mobile_no , placeholder:"Contact number" %>
+  </div>
+  <div>
+    <%= form.text_area :mutawalli_name , placeholder:"Name of Mutawalli/Zimmedar" %>
+  </div>
+  
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
