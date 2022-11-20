@@ -6,13 +6,16 @@
   </div>
 
   <div>
-    <%= form.text_area :address , placeholder:"Address of mosque" %>
+    <%= form.text_field :address , placeholder:"Address of mosque" %>
   </div>
   <div>
-    <%= form.text_area :mobile_no , placeholder:"Contact number" %>
+    <%= form.text_field :mobile_no , placeholder:"Contact number" %>
   </div>
   <div>
-    <%= form.text_area :mutawalli_name , placeholder:"Name of Mutawalli/Zimmedar" %>
+    <%= form.text_field :mutawalli_name , placeholder:"Name of Mutawalli/Zimmedar" %>
+  </div>
+  <div>
+    <%= form.text_field :imam_name , value:"", type:"hidden" %>
   </div>
   
 
