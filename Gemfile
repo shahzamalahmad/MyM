@@ -70,8 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-group :development do
-  gem "pg"
+
+group :production do
+    gem "pg"
 end
 
 gem "pry"
