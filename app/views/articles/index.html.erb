@@ -11,6 +11,9 @@
 			          <%= link_to "HOME", root_path, class:"nav-link" %>
 			        </li>
 			        <li class="nav nav-pills flex-column">
+			          <%= link_to "Add Mosque", new_article_path, class:"nav-link" %>
+			        </li>
+			        <li class="nav nav-pills flex-column">
 			          <%= link_to "ABOUT", articles_about_path, class:"nav-link" %>
 			        </li>
 			    </ul>
@@ -35,7 +38,19 @@
 <!-- Mosque data -->
 		<div class="col" style="text-align: center; background-color: ;">
 			<div class="bg-success p-2 text-white bg-opacity-75">
-				<h1><%= "Mosque Data" %></h1>
+				<h1><%= "Mosque without Imam" %></h1>
+			</div>
+			<div class="container-fluid">
+				<% @articles.each do |article| %>
+					<% if article.imam_name == "" %>
+	   				   <div class="row">
+		   				    <h5><%= link_to article.mosque_name, article, class:"nav-link" %></h5>
+	   				   </div>
+	   				   <div class="row">
+	    					<%= link_to article.address, article, class:"nav-link" %>
+	   				   </div>
+	   				   <% end %>
+				<% end %>				
 			</div>
 		</div>
 

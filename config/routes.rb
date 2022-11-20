@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'static_pages/dashboard'
 
   devise_for :users
+  get 'users/:id', to: "users#show"
   
   resources :users
   # get 'article/index'
