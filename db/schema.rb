@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_14_184525) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_20_153729) do
   create_table "articles", force: :cascade do |t|
     t.integer "mobile_no"
     t.string "mutawalli_name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_184525) do
     t.string "mosque_name"
     t.string "address"
     t.string "imam_name"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
