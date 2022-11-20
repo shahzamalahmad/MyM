@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
+# binding.pry
     if @article.save
       redirect_to root_path
     else
@@ -50,6 +50,6 @@ class ArticlesController < ApplicationController
 
    private
     def article_params
-      params.require(:article).permit(:mosque_name, :address, :mobile_no, :mutawalli_name, :imam_name, :requirement)
+      params.require(:article).permit(:mosque_name, :address, :mobile_no, :mutawalli_name, :imam_name, :requirement, :user_id)
     end
 end
