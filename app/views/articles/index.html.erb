@@ -5,8 +5,9 @@
 				<div class="bg-success p-2 text-white bg-opacity-75">
 			    	<h1><%= link_to "MyM", root_path, class:"nav-link" %></h1>
 			</div>
-			    <br>
+			    	<br>
 			    <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 30px;">
+			    <br>
 			        <li class="nav nav-pills flex-column">
 			          <%= link_to "HOME", root_path, class:"nav-link" %>
 			        </li>
@@ -24,14 +25,18 @@
 			<div class="bg-success p-2 text-white bg-opacity-75">
 				<h1><%= "All Mosque" %></h1>
 			</div>
+				<br>
 			<div class="container-fluid">
 				<% @articles.each do |article| %>
-   				   <div class="row">
-	   				    <h5><%= link_to article.mosque_name, article, class:"nav-link" %></h5>
-   				   </div>
-   				   <div class="row">
-    					<%= link_to article.address, article, class:"nav-link" %>
-   				   </div>
+					<div class="border border-primary" style="border-radius: 20%; background-color: lightgreen;">
+	   				   <div class="row">
+		   				    <h5><%= link_to article.mosque_name, article, class:"nav-link" %></h5>
+	   				   </div>
+	   				   <div class="row">
+	    					<%= link_to article.address, article, class:"nav-link" %>
+	   				   </div>
+					</div>
+					<br>
 				<% end %>				
 			</div>
 		</div>
@@ -40,15 +45,21 @@
 			<div class="bg-success p-2 text-white bg-opacity-75">
 				<h1><%= "Mosque without Imam" %></h1>
 			</div>
+				<br>
 			<div class="container-fluid">
 				<% @articles.each do |article| %>
 					<% if article.imam_name == "" %>
-	   				   <div class="row">
-		   				    <h5><%= link_to article.mosque_name, article, class:"nav-link" %></h5>
-	   				   </div>
-	   				   <div class="row">
-	    					<%= link_to article.address, article, class:"nav-link" %>
-	   				   </div>
+						<div class="border border-primary" style="border-radius: 20%; background-color: lightgreen;">
+
+		   				   <div class="row">
+			   				    <h5><%= link_to article.mosque_name, article, class:"nav-link" %></h5>
+		   				   </div>
+		   				   <div class="row">
+		    					<%= link_to article.address, article, class:"nav-link" %>
+		   				   </div>
+		   				   <br>
+		   				</div>
+		   				<br>
 	   				<% end %>
 				<% end %>				
 			</div>
@@ -59,6 +70,7 @@
 			<div class="bg-success p-2 text-white bg-opacity-75">
 				<h1><%= "Other Details" %></h1>
 			</div>
+				<br>
 		</div>
 		
 	</div>
