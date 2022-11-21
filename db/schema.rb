@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_20_153729) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_21_054939) do
   create_table "articles", force: :cascade do |t|
-    t.integer "mobile_no"
     t.string "mutawalli_name"
     t.boolean "requirement"
     t.datetime "created_at", null: false
@@ -21,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_20_153729) do
     t.string "address"
     t.string "imam_name"
     t.integer "user_id"
+    t.bigint "mobile_no"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
