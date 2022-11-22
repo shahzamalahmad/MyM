@@ -40,9 +40,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    # binding.pry
     @article = Article.find(params[:id])
-    @article.delete
+    @article.destroy
 
     if @article.save
       redirect_to root_path, status: :see_other
