@@ -40,6 +40,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @article = Article.find(params[:id])
     @article.delete
 
