@@ -9,7 +9,7 @@
     <%= form.text_field :address , placeholder:"Address of mosque" %>
   </div>
   <div>
-    <%= form.number_field :mobile_no , placeholder:"Contact number" %>
+    <%= form.number_field :mobile_no , placeholder:"Contact number", style:"max: 10;" %>
   </div>
   <div>
     <%= form.text_field :mutawalli_name , placeholder:"Name of Mutawalli/Zimmedar" %>
@@ -18,7 +18,7 @@
     <%= form.text_field :imam_name , value:"", type:"hidden" %>
   </div>
   <div>
-    <%= form.number_field :user_id , value:current_user.id %>
+    <%= form.number_field :user_id , value:current_user.id, type:"hidden" %>
   </div>
   
 

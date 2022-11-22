@@ -41,9 +41,11 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
+    @article.delete
 
-    redirect_to root_path, status: :see_other
+    if @article.save
+      redirect_to root_path, status: :see_other
+    end
   end
 
 
