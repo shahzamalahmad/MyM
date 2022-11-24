@@ -10,6 +10,10 @@ class ArticlesController < ApplicationController
   def about
   end
 
+  def login
+    
+  end
+
   def new
     @article = Article.new
   end

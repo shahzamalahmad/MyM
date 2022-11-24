@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :users
   # get 'article/index'
-  # get 'article/show'
+  get 'articles/login'
   get 'articles/about'
   # get 'article/new'
   # get 'article/edit'

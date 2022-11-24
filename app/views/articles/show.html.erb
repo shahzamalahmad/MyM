@@ -50,10 +50,13 @@
 <% if user_signed_in? %>
 	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		<li  style="text-align: center;">
-			<%= link_to "Edit", edit_article_path(@article), class:"btn btn-primary" %>
-			<%= link_to "Destroy", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"btn btn-primary" %>
+			<% if current_user == @article.user %>
+				<%= link_to "Edit", edit_article_path(@article), class:"btn btn-primary" %>
+				<%= link_to "Destroy", articles_path(@articles), data: { turbo_method: :delete, remote: true, turbo_confirm: "Are you sure?" }, class:"btn btn-primary" %>
+			<% end %>
 			<%= link_to 'Back', :back, class:"btn btn-primary" %>	
 		</li>
 	</ul>
 <% end %>
+
 
