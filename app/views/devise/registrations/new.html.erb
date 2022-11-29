@@ -15,10 +15,10 @@
           <div class="field">
             <div class="container-fluid">
               <div class="row-center">
-                  Mutawalli 
+                  Admin 
               </div>
               <div class="row-center">
-                <%= f.radio_button :admin, "mutavalli" %>
+                <%= f.radio_button :role, value:0 %>
               </div>
             </div>
           </div>
@@ -30,7 +30,19 @@
                   Imam
               </div>
               <div class="row-center">
-                <%= f.radio_button :admin, "imam" %>
+                <%= f.radio_button :role, value:1 %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="field">
+            <div class="container-fluid">
+              <div class="row-center">
+                  User
+              </div>
+              <div class="row-center">
+                <%= f.radio_button :role, value:2 %>
               </div>
             </div>
           </div>
