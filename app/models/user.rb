@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles, dependent: :destroy
+  has_many :roles, dependent: :destroy
 
   
   # Include default devise modules. Others available are:
@@ -10,6 +11,7 @@ class User < ApplicationRecord
   enum role: [:admin, :user, :imam]
   after_initialize :set_default_role, :if => :new_record?
   def set_default_role
-    self.role ||= :user
+    seroles||= :user
   end
 end
+
