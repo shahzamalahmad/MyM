@@ -40,8 +40,8 @@
       |
       <div class="col-1">
             <strong><%= current_user.email %></strong>
+            <strong><%= current_user.role %></strong>
       </div>
-      
     </div>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %> |

@@ -1,6 +1,16 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
+
+    # @count = Article.where('created_at > ?', 12.hours.ago).group_by {|u| u.created_at.strftime("%I:%p") }.transform_values {|v| {article: v.group_by {|u| u.id}.transform_values {|v| v.count }} }
+    # if 
+      # @count = Article.where('created_at > ?', 12.hours.ago).group_by {|u| u.created_at.strftime("%I:%p") }
+    # else Article.present!
+
+
+    # end
+
+    
   end
 
   def show
@@ -8,6 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def about
+   
   end
 
   def login
