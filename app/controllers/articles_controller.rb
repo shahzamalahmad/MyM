@@ -1,14 +1,9 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
-
-    # @count = Article.where('created_at > ?', 12.hours.ago).group_by {|u| u.created_at.strftime("%I:%p") }.transform_values {|v| {article: v.group_by {|u| u.id}.transform_values {|v| v.count }} }
-    # if 
-      # @count = Article.where('created_at > ?', 12.hours.ago).group_by {|u| u.created_at.strftime("%I:%p") }
-    # else Article.present!
-
-
-    # end
+    @imam = User.all.where(role: "imam").pluck(:email)
+    # @user = User.all.where(role: "imam")
+  
 
     
   end

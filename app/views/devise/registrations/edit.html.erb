@@ -55,6 +55,9 @@
         </div>
       </div>
     </div>
+  <% elsif current_user.role == imam %>
+    <% f.text_field :first_name %>
+
   <% end %>
 
   <div class="field">

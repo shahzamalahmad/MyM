@@ -82,10 +82,20 @@
 		<div class="col" style="text-align: center; background-color: ;">
 			<div class="bg-success p-2 text-white bg-opacity-75">
 				<h1><%= "All Imam" %></h1>
-
-
 			</div>
-				<br>
+			<br>
+			<div class="container-fluid">
+				<% @imam.each do |imam| %>
+					<div class="border border-primary" style="border-radius: 20%; background-color: lightgreen;">
+	   				   <div class="row">
+		   				    <h5><%= imam %></h5>
+	   				   </div>
+	   				 
+					</div>
+					<br>
+				<% end %>	
+				<%#= @user.email %>			
+			</div>
 		</div>
 		
 	</div>
