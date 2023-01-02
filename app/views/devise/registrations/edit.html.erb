@@ -12,7 +12,6 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
   <%# binding.pry %>
-  <% if current_user.role == admin %>
     <div class="field">
       <div class="container-fluid">
         <div class="row">
@@ -55,10 +54,20 @@
         </div>
       </div>
     </div>
-  <% elsif current_user.role == imam %>
-    <% f.text_field :first_name %>
 
-  <% end %>
+
+  <div class="field">
+    <%= f.label :First_name %> <br />
+    <%= f.text_field :first_name, autocomplete: "first_name", value: " " %>
+    
+  </div>
+  <div class="field">
+    <%= f.label :Last_name %> <br />
+    <%= f.text_field :last_name, autocomplete: "last_name" %>
+    
+  </div>
+
+
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
