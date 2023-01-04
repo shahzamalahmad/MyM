@@ -1,14 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
-    @imam = User.all.where(role: "imam")
-    @imam_name = User.all.where(role: "imam")
-    @imam_full_name = @imam_name.pluck(:first_name)
-    # .to_s + " " + @imam_name.pluck(:last_name).to_s
-    # @user = User.all.where(role: "imam")
-  
-  
-    
+    @user = User.all
   end
 
   def show

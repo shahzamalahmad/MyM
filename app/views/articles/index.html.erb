@@ -85,14 +85,15 @@
 			</div>
 			<br>
 			<div class="container-fluid">
-				<% @imam.each do |imam| %>
-					<div class="border border-primary" style="border-radius: 20%; background-color: lightgreen;">
-	   				   <div class="row">
-		   				    <h5><%= imam %></h5>
-		   				    
-	   				   </div>
-	   				 
-					</div>
+				<% @user.each do |user| %>
+		   			<% if user.role == "imam" %>
+						<div class="border border-primary" style="border-radius: 20%; background-color: lightgreen;">
+		   				    <div class="row">
+			   				    <h5><%= user.first_name.to_s + " " + user.last_name.to_s %></h5>
+			   				    <h5><%= user.email %></h5>
+		   				    </div>
+						</div>
+			   		<% end %>
 					<br>
 				<% end %>
 			</div>
