@@ -4,8 +4,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%#= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", type: "hidden" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -57,15 +57,25 @@
 
 
   <div class="field">
-    <%= f.label :First_name %> <br />
-    <%= f.text_field :first_name, autocomplete: "first_name", value: " " %>
-    
+    <%= f.text_field :first_name, autocomplete: "first_name", value: " ", placeholder: "First_name" %>
   </div>
   <div class="field">
-    <%= f.label :Last_name %> <br />
-    <%= f.text_field :last_name, autocomplete: "last_name" %>
-    
+    <%= f.text_field :last_name, autocomplete: "last_name", placeholder: "Last_name" %>
   </div>
+  <div class="field">
+    <%= f.select :qualification, [['Hafij', 1], ['Qari', 2], ['Molana', 3], ['Mufti', 4], ['Adab', 5], ['takhassus fil hadith', 6], ['Takhassus fil ifta', 7]] %>
+  </div>
+  <div class="field">
+    <%= f.text_field :address, autocomplete: "address", placeholder: "Address" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :contact_number, autocomplete: "contact_number", placeholder: "Contact_number" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :resion, autocomplete: "resion", placeholder: "Resion" %>
+  </div>
+
+
 
 
 
